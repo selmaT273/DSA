@@ -10,4 +10,4 @@ Write a function called reverseArray which takes an array as an argument. Withou
 We set a counter to index through our new array and a for loop that iterated through our input array, and as we iterated through the for loop we increased the counter and decreased.
 
 ## Solution
-[Reverse An Array Solution](solution-images/IMG_1672.jpg)
+[Reverse An Array Solution](assets/reverse-array.jpg)
