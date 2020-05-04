@@ -22,7 +22,7 @@ namespace Challenges
                 j++;
             }
 
-            Console.Write(string.Join(",", arr2));
+            Console.Write(string.Join(", ", arr2));
         }
     }
 }
