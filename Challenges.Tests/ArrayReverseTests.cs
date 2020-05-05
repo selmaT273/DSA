@@ -5,10 +5,14 @@ namespace Challenges.Tests
 {
     public class ArrayReverseTests
     {
-        [Fact]
-        public void Test1()
+        [Theory]
+        [InlineData(new[] { 3, 5, 7, 2 }, new[] { 2, 7, 5, 3 })]
+
+        public void can_reverse_array(int[] input, int[] expected)
         {
-            Assert.False(false);
+
+            int[] result = ArrayChallenges.ArrayReversed(input);
+            Assert.Equal(expected, result);
         }
     }
 }
