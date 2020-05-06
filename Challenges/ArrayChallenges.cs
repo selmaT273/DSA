@@ -20,6 +20,16 @@ namespace Challenges
             return arr2;
         }
 
-        //public static void ArrayShift(int[]);
+        public static int[] InsertArrayShift(int[] inputArray, int num)
+        {
+            int j = 0;
+            int[] newArray = new int[inputArray.Length + 1];
+            int middle = inputArray.Length / 2;
+
+            for (int i = 0; i < num + 1; i++)
+            {
+                if (j )
+            }
+        }
     }
 }
