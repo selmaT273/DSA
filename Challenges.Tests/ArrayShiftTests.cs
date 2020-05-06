@@ -24,7 +24,17 @@ namespace Challenges.Tests
 
         //}
 
-        //[Fact]
-        //public void 
+        [Fact]
+        public void InsertIntoOddLength()
+        {
+            // Arrange
+            int[] input = new[] { 4, 5, 6, 8, 9 };
+
+            //Act
+            int[] result = ArrayChallenges.InsertArrayShift(input, 7);
+
+            // Assert
+            Assert.Equal(new[] { 4, 5, 6, 7, 8, 9 }, result);
+        }
     }
 }

@@ -23,7 +23,8 @@ namespace Challenges
         public static int[] InsertArrayShift(int[] inputArray, int num)
         {
             int[] newArray = new int[inputArray.Length + 1];
-            int middle = inputArray.Length / 2;
+
+            decimal middle = Math.Ceiling(inputArray.Length / 2m);
 
             for (int i = 0; i < newArray.Length; i++)
             {
