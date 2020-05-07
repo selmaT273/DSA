@@ -78,7 +78,7 @@ namespace Challenges
                 if (searchKey == inputArray[middle])
                 {
                     // Return the index of where the searchKey was found
-                    return ++middle;
+                    return middle;
                 }
 
                 // If searchKey value is less than the middle value 

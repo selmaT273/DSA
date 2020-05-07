@@ -6,12 +6,6 @@ namespace Challenges.Tests
     public class BinarySearchTests
     {
         [Fact]
-        public void FindMiddleTest()
-        {
-
-        }
-
-        [Fact]
         public void ReturnsIndexOfValueTest()
         {
             //Arrange
@@ -22,7 +16,7 @@ namespace Challenges.Tests
             int result = ArrayChallenges.BinarySearch(input, searchKey);
 
             // Assert
-            Assert.Equal(2, result);
+            Assert.Equal(1, result);
         }
 
         // Test if input array is empty
