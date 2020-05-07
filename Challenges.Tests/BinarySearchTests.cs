@@ -14,7 +14,15 @@ namespace Challenges.Tests
         [Fact]
         public void ReturnsIndexOfValueTest()
         {
+            //Arrange
+            int[] input = new[] { 4, 5, 7, 8, 9};
+            int searchKey = 5;
 
+            //Act
+            int result = ArrayChallenges.BinarySearch(input, searchKey);
+
+            // Assert
+            Assert.Equal(2, result);
         }
 
         // Test if input array is empty

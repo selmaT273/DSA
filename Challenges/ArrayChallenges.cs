@@ -58,10 +58,48 @@ namespace Challenges
             return newArray;
         }
 
-        public static int[] BinarySearch(int[] inputArray, int searchKey)
+        public static int BinarySearch(int[] inputArray, int searchKey)
         {
+            // Return -1 if searchkey value doesn't exist in inputArray
+            int notFound = -1;
+            // Set the start of our chunk that we're searching in at 0 index to start
+            int lowerLimit = 0;
 
-            return inputArray;
+            // Set the end of the chunk we're searching in at last index to start
+            int upperLimit = inputArray.Length - 1;
+
+            // As long as the index of where our search begins is less than or equal to where our search ends...
+            while (lowerLimit <= upperLimit)
+            {
+                // Find middle by finding the range and dividing by 2
+                int middle = (lowerLimit + upperLimit) / 2;
+
+                // If the value we're searching for is equal to the value at the middle index
+                if (searchKey == inputArray[middle])
+                {
+                    // Return the index of where the searchKey was found
+                    return ++middle;
+                }
+
+                // If searchKey value is less than the middle value 
+                else if (searchKey < inputArray[middle])
+                {
+                    // Set the end of the chunk we're searching 
+                    upperLimit = middle - 1;
+                }
+
+                // If search key is bigger than the middle value
+                else
+                {
+                    // Set the beginning of the chunk we're searching
+                    lowerLimit = middle + 1;
+                }
+
+
+            }
+
+            // Return -1 if we can't find the searchKey in the inputArray
+            return notFound;
         }
     }
 }
