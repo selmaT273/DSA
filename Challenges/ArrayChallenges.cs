@@ -57,5 +57,11 @@ namespace Challenges
             // Return the new array with the num in the middle
             return newArray;
         }
+
+        public static int[] BinarySearch(int[] inputArray, int searchKey)
+        {
+
+            return inputArray;
+        }
     }
 }
