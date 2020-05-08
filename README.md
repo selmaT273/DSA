@@ -23,3 +23,14 @@ The approach I took has a linear time space complexity, in that it must iterate 
 
 ## Solution
 [Insert and Shift Array](assets/array-shift.jpg)
+
+# Code Challenge 3:
+
+## Problem Domain
+Perform a binary search in a 1d sorted array
+
+## Approach and Efficiency
+The approach I took has a time space complexity of O(log n).
+
+## Solution
+[Binary Search](assets/binary-search.jpg)
