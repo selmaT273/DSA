@@ -21,7 +21,7 @@ namespace DataStructuresTests
 
             list.Insert(1);
 
-            Assert.Equal("1", list.ToString());
+            Assert.Equal("{ 1 } -> NULL", list.ToString());
         }
 
         [Fact]
@@ -42,7 +42,7 @@ namespace DataStructuresTests
             list.Insert(4);
             list.Insert(6);
 
-            Assert.Equal("6 4", list.ToString());
+            Assert.Equal("{ 6 } -> { 4 } -> NULL", list.ToString());
         }
 
         [Fact]
@@ -65,6 +65,17 @@ namespace DataStructuresTests
             list.Insert(9);
 
             Assert.False(list.Includes(8));
+        }
+
+        [Fact]
+        public void ReturnsStringofAllValuesTest()
+        {
+            LinkedList list = new LinkedList();
+
+            list.Insert(3);
+            list.Insert(6);
+
+            Assert.Equal("{ 6 } -> { 3 } -> NULL", list.ToString());
         }
     }
 }

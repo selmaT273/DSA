@@ -19,14 +19,17 @@ namespace DataStructures
 
                 while(current != null)
                 {
+                    list += "{ ";
                     list += current.ToString();
                     current = current.Next;
                     if (current != null)
                     {
-                        list += " ";
+                        list += " } -> ";
                     }
-
+                    
                 }
+
+                list += " } -> NULL";
 
                 return list;
             }
