@@ -23,5 +23,16 @@ namespace DataStructuresTests
 
             Assert.Equal("1", list.ToString());
         }
+
+        [Fact]
+        public void HeadPointsAtFirstNodeTest()
+        {
+            LinkedList list = new LinkedList();
+
+            list.Insert(5);
+
+            Assert.Equal("5", list.Head.ToString());
+        }
+
     }
 }
