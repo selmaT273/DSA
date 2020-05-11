@@ -14,14 +14,37 @@ namespace DataStructures
             }
             else
             {
-                return Head.ToString();
+                Node current = Head;
+                string list = "";
+
+                while(current != null)
+                {
+                    list += current.ToString();
+                    current = current.Next;
+                    if (current != null)
+                    {
+                        list += " ";
+                    }
+
+                }
+
+                return list;
             }
 
         }
 
         public void Insert(int value)
         {
-            this.Head = new Node(value);
+            if(Head == null)
+            {
+                Head = new Node(value);
+            }
+            else
+            {
+                Node node = new Node(value);
+                node.Next = Head;
+                Head = node;
+            }
         }
     }
     

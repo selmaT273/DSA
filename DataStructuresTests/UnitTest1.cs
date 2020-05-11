@@ -34,5 +34,16 @@ namespace DataStructuresTests
             Assert.Equal("5", list.Head.ToString());
         }
 
+        [Fact]
+        public void InsertMultipleNodesTest()
+        {
+            LinkedList list = new LinkedList();
+
+            list.Insert(4);
+            list.Insert(6);
+
+            Assert.Equal("6 4", list.ToString());
+        }
+
     }
 }
