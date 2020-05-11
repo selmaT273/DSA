@@ -46,6 +46,31 @@ namespace DataStructures
                 Head = node;
             }
         }
+
+        public bool Includes(int value)
+        {
+            if(Head != null)
+            {
+                Node current = Head;
+
+                while (current != null)
+                {
+                    if (current.Data == value)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        current = current.Next;
+                    }
+                }
+                return false;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
     
     public class Node

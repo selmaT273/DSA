@@ -45,5 +45,15 @@ namespace DataStructuresTests
             Assert.Equal("6 4", list.ToString());
         }
 
+        [Fact]
+        public void ReturnsTrueIfExistsTest()
+        {
+            LinkedList list = new LinkedList();
+
+            list.Insert(7);
+            list.Insert(8);
+
+            Assert.True(list.Includes(8));
+        }
     }
 }
