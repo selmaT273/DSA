@@ -15,8 +15,14 @@ namespace DataStructures
             else
             {
                 return Head.ToString();
+            }
+
         }
-    }
+
+        public void Insert(int value)
+        {
+            this.Head = new Node(value);
+        }
     }
     
     public class Node
@@ -26,6 +32,11 @@ namespace DataStructures
         public override string ToString()
         {
             return Data.ToString();
+        }
+        public Node(int value)
+        {
+            Data = value;
+            Next = null;
         }
 
     }

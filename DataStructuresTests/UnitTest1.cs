@@ -13,5 +13,15 @@ namespace DataStructuresTests
 
             Assert.Equal("", list.ToString());
         }
+
+        [Fact]
+        public void InsertAtHeadTest()
+        {
+            LinkedList list = new LinkedList();
+
+            list.Insert(1);
+
+            Assert.Equal("1", list.ToString());
+        }
     }
 }
