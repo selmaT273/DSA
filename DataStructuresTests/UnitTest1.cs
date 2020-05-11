@@ -55,5 +55,16 @@ namespace DataStructuresTests
 
             Assert.True(list.Includes(8));
         }
+
+        [Fact]
+        public void ReturnsFalseIfDoesntExistTest()
+        {
+            LinkedList list = new LinkedList();
+
+            list.Insert(7);
+            list.Insert(9);
+
+            Assert.False(list.Includes(8));
+        }
     }
 }
