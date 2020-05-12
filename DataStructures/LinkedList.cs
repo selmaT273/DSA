@@ -92,6 +92,49 @@ namespace DataStructures
                 Tail = node;
             }
         }
+
+        public void InsertBefore(int value, int newValue)
+        {
+
+
+            if (Head == null)
+            {
+                throw new ArgumentException($"{value} not found in Linked List");
+            }
+
+            if (Head.Data == value)
+            {
+                Insert(newValue);
+            }
+            else
+            {
+                Node current = Head;
+                bool found = false;
+
+                while (current.Next != null)
+                {
+
+                    if (current.Next.Data == value)
+                    {
+                        Node oldNext = current.Next;
+                        current.Next = new Node(newValue);
+                        current.Next.Next = oldNext;
+                        found = true;
+                        break;
+                    }
+                    else
+                    {
+                        current = current.Next;
+                    }
+                }
+
+                if (!found)
+                {
+                    throw new ArgumentException($"{value} not found in Linked List");
+                }
+            }
+                
+        }
     }
 
 
