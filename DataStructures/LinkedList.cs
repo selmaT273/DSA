@@ -83,7 +83,7 @@ namespace DataStructures
             if (Tail == null)
             {
                 Head = new Node(value);
-                Tail = new Node(value);
+                Tail = Head;
             }
             else
             {
@@ -134,6 +134,49 @@ namespace DataStructures
                 }
             }
                 
+        }
+
+        public void InsertAfter(int value, int newValue)
+        {
+
+
+            if (Head == null)
+            {
+                throw new ArgumentException($"{value} not found in Linked List");
+            }
+            else
+            {
+                Node current = Head;
+                bool found = false;
+
+                while (current != null)
+                {
+
+                    if (current.Data == value)
+                    {
+                        Node oldNext = current.Next;
+                        current.Next = new Node(newValue);
+                        current.Next.Next = oldNext;
+                        if(current == Tail)
+                        {
+                            Tail = current.Next;
+                        }
+
+                        found = true;
+                        break;
+                    }
+                    else
+                    {
+                        current = current.Next;
+                    }
+                }
+
+                if (!found)
+                {
+                    throw new ArgumentException($"{value} not found in Linked List");
+                }
+            }
+
         }
     }
 
