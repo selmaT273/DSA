@@ -77,5 +77,94 @@ namespace DataStructuresTests
 
             Assert.Equal("{ 6 } -> { 3 } -> NULL", list.ToString());
         }
+
+        [Fact]
+        public void TailPointsAtLastNodeTest()
+        {
+            LinkedList list = new LinkedList();
+
+            list.Insert(5);
+            list.Insert(6);
+
+            Assert.Equal("5", list.Tail.ToString());
+        }
+
+        [Fact]
+        public void AppendAddsAtEndTest()
+        {
+            LinkedList list = new LinkedList();
+
+            list.Insert(2);
+            list.Insert(6);
+            list.Append(5);
+
+            Assert.Equal("5", list.Tail.ToString());
+        }
+
+        [Fact]
+        public void AppendsMultipleNodesTest()
+        {
+            LinkedList list = new LinkedList();
+
+            list.Append(4);
+            list.Append(8);
+            list.Append(9);
+
+            Assert.Equal("9", list.Tail.ToString());
+        }
+
+        [Fact]
+        public void InsertNodeBeforeFirstNodeTest()
+        {
+            LinkedList list = new LinkedList();
+
+            list.Insert(1);
+            list.Insert(2);
+            list.Insert(3);
+            list.InsertBefore(3, 5);
+
+            Assert.Equal("5", list.Head.ToString());
+        }
+
+        [Fact]
+        public void InsertNodeBeforeMiddleNodeTest()
+        {
+            LinkedList list = new LinkedList();
+
+            list.Insert(1);
+            list.Insert(2);
+            list.Insert(3);
+            list.InsertBefore(2, 5);
+
+            Assert.Equal("{ 3 } -> { 5 } -> { 2 } -> { 1 } -> NULL", list.ToString());
+        }
+
+
+        [Fact]
+        public void InsertNodeAfterMiddleNodeTest()
+        {
+            LinkedList list = new LinkedList();
+
+            list.Insert(4);
+            list.Insert(5);
+            list.Insert(6);
+            list.InsertAfter(5, 3);
+
+            Assert.Equal("{ 6 } -> { 5 } -> { 3 } -> { 4 } -> NULL", list.ToString());
+        }
+
+        [Fact]
+        public void InsertNodeAfterLastNodeTest()
+        {
+            LinkedList list = new LinkedList();
+
+            list.Append(1);
+            list.Append(2);
+            list.Append(3);
+            list.InsertAfter(3, 5);
+
+            Assert.Equal("5", list.Tail.ToString());
+        }
+
     }
 }

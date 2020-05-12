@@ -5,6 +5,7 @@ namespace DataStructures
     public class LinkedList
     {
         public Node Head { get; set; }
+        public Node Tail { get; set; }
 
         public override string ToString()
         {
@@ -36,11 +37,13 @@ namespace DataStructures
 
         }
 
+
         public void Insert(int value)
         {
             if(Head == null)
             {
                 Head = new Node(value);
+                Tail = new Node(value);
             }
             else
             {
@@ -74,7 +77,110 @@ namespace DataStructures
                 return false;
             }
         }
+
+        public void Append(int value)
+        {
+            if (Tail == null)
+            {
+                Head = new Node(value);
+                Tail = Head;
+            }
+            else
+            {
+                Node node = new Node(value);
+                Tail.Next = node;
+                Tail = node;
+            }
+        }
+
+        public void InsertBefore(int value, int newValue)
+        {
+
+
+            if (Head == null)
+            {
+                throw new ArgumentException($"{value} not found in Linked List");
+            }
+
+            if (Head.Data == value)
+            {
+                Insert(newValue);
+            }
+            else
+            {
+                Node current = Head;
+                bool found = false;
+
+                while (current.Next != null)
+                {
+
+                    if (current.Next.Data == value)
+                    {
+                        Node oldNext = current.Next;
+                        current.Next = new Node(newValue);
+                        current.Next.Next = oldNext;
+                        found = true;
+                        break;
+                    }
+                    else
+                    {
+                        current = current.Next;
+                    }
+                }
+
+                if (!found)
+                {
+                    throw new ArgumentException($"{value} not found in Linked List");
+                }
+            }
+                
+        }
+
+        public void InsertAfter(int value, int newValue)
+        {
+
+
+            if (Head == null)
+            {
+                throw new ArgumentException($"{value} not found in Linked List");
+            }
+            else
+            {
+                Node current = Head;
+                bool found = false;
+
+                while (current != null)
+                {
+
+                    if (current.Data == value)
+                    {
+                        Node oldNext = current.Next;
+                        current.Next = new Node(newValue);
+                        current.Next.Next = oldNext;
+                        if(current == Tail)
+                        {
+                            Tail = current.Next;
+                        }
+
+                        found = true;
+                        break;
+                    }
+                    else
+                    {
+                        current = current.Next;
+                    }
+                }
+
+                if (!found)
+                {
+                    throw new ArgumentException($"{value} not found in Linked List");
+                }
+            }
+
+        }
     }
+
+
     
     public class Node
     {
