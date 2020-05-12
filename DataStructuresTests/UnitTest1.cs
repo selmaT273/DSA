@@ -77,5 +77,28 @@ namespace DataStructuresTests
 
             Assert.Equal("{ 6 } -> { 3 } -> NULL", list.ToString());
         }
+
+        [Fact]
+        public void TailPointsAtLastNodeTest()
+        {
+            LinkedList list = new LinkedList();
+
+            list.Insert(5);
+            list.Insert(6);
+
+            Assert.Equal("5", list.Tail.ToString());
+        }
+
+        [Fact]
+        public void AppendAddsAtEndTest()
+        {
+            LinkedList list = new LinkedList();
+
+            list.Append(2);
+            list.Append(6);
+            list.Append(5);
+
+            Assert.Equal("5", list.Tail.ToString());
+        }
     }
 }

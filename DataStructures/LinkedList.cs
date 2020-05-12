@@ -5,6 +5,7 @@ namespace DataStructures
     public class LinkedList
     {
         public Node Head { get; set; }
+        public Node Tail { get; set; }
 
         public override string ToString()
         {
@@ -36,11 +37,13 @@ namespace DataStructures
 
         }
 
+
         public void Insert(int value)
         {
             if(Head == null)
             {
                 Head = new Node(value);
+                Tail = new Node(value);
             }
             else
             {
@@ -74,7 +77,24 @@ namespace DataStructures
                 return false;
             }
         }
+
+        public void Append(int value)
+        {
+            if (Tail == null)
+            {
+                Head = new Node(value);
+                Tail = new Node(value);
+            }
+            else
+            {
+                Node node = new Node(value);
+                Tail.Next = node;
+                Tail = node;
+            }
+        }
     }
+
+
     
     public class Node
     {
