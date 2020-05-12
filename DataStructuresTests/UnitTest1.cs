@@ -125,5 +125,19 @@ namespace DataStructuresTests
 
             Assert.Equal("5", list.Head.ToString());
         }
+
+        [Fact]
+        public void InsertNodeBeforeMiddleNodeTest()
+        {
+            LinkedList list = new LinkedList();
+
+            list.Insert(1);
+            list.Insert(2);
+            list.Insert(3);
+            list.InsertBefore(2, 5);
+
+            Assert.Equal("{ 3 } -> { 5 } -> { 2 } -> { 1 } -> NULL", list.ToString());
+        }
+
     }
 }
