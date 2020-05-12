@@ -57,9 +57,25 @@ Create a singly linked list that can instantiate an empty linked list, add to th
 I created a dynamic approach to this that is a time-space complexity of O(1).
 
 ## API
+
 ### ToString:
 This method returns an empty string if the linked list is empty, thereby instantiating a new empty LinkedList. If the list is not empty, it prints out the values in the list in this format:  "{ a } -> { b } -> { c } -> NULL"
 ### Insert:
 This method takes in an integer value as an argument and adds a new node to the list with that value as the head of the list. 
 ### Includes:
 This method takes in an integer value as an argument and returns a boolean depending on if that value exists as a Node's value somewhere in the list. 
+
+# Code Challenge 6: Linked List Insertions
+
+## Problem Domain
+Create the following methods:
+- Adds a new node with the given value to the end of the list
+- Adds a new node with the given newValue immediately before the first value node
+- Adds a new node with the given newValue immediately after the first value node
+- Write tests to prove the above functionalities, including when the value is the first node in the list or the last node in the list 
+
+## Approach and Efficiency
+I took both a linear and constant approach to writing the methods detailed above.
+
+## Solution
+[Linked List Insertions](assets/ll-insertions.jpg)
