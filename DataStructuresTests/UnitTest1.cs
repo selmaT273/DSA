@@ -94,11 +94,23 @@ namespace DataStructuresTests
         {
             LinkedList list = new LinkedList();
 
-            list.Append(2);
-            list.Append(6);
+            list.Insert(2);
+            list.Insert(6);
             list.Append(5);
 
             Assert.Equal("5", list.Tail.ToString());
+        }
+
+        [Fact]
+        public void AppendsMultipleNodesTest()
+        {
+            LinkedList list = new LinkedList();
+
+            list.Append(4);
+            list.Append(8);
+            list.Append(9);
+
+            Assert.Equal("9", list.Tail.ToString());
         }
     }
 }
