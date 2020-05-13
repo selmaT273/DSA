@@ -217,5 +217,17 @@ namespace DataStructuresTests
             Assert.Equal("The list is shorter than 5 length.", exception.Message);
         }
 
+        [Fact]
+        public void KAndLengthAreSameTest()
+        {
+            LinkedList list = new LinkedList();
+
+            list.Insert(1);
+            list.Insert(2);
+            list.Insert(3);
+            list.Insert(4);
+
+            Assert.Equal(4, list.kthFromEnd(4));
+        }
     }
 }
