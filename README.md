@@ -79,3 +79,14 @@ I took both a linear and constant approach to writing the methods detailed above
 
 ## Solution
 [Linked List Insertions](assets/ll-insertions.jpg)
+
+# Code Challenge 7: Kth From the End 
+
+## Problem Domain
+- Write a method for the Linked List class that takes in a number k as a parameter and returns the node's value that is k from the end of the linked list.
+
+## Approach and Efficiency
+The approach I used to write this method has a linear time-space complexity.
+
+## Solution
+[Kth From The End](assets/ll-from-end.jpg)
