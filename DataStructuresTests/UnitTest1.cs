@@ -12,6 +12,7 @@ namespace DataStructuresTests
             LinkedList list = new LinkedList();
 
             Assert.Equal("", list.ToString());
+            Assert.Equal(0, list.Length);
         }
 
         [Fact]
@@ -22,6 +23,7 @@ namespace DataStructuresTests
             list.Insert(1);
 
             Assert.Equal("{ 1 } -> NULL", list.ToString());
+            Assert.Equal(1, list.Length);
         }
 
         [Fact]
@@ -32,6 +34,7 @@ namespace DataStructuresTests
             list.Insert(5);
 
             Assert.Equal("5", list.Head.ToString());
+            Assert.Equal(1, list.Length);
         }
 
         [Fact]
@@ -43,6 +46,7 @@ namespace DataStructuresTests
             list.Insert(6);
 
             Assert.Equal("{ 6 } -> { 4 } -> NULL", list.ToString());
+            Assert.Equal(2, list.Length);
         }
 
         [Fact]
@@ -54,6 +58,7 @@ namespace DataStructuresTests
             list.Insert(8);
 
             Assert.True(list.Includes(8));
+            Assert.Equal(2, list.Length);
         }
 
         [Fact]
@@ -65,6 +70,7 @@ namespace DataStructuresTests
             list.Insert(9);
 
             Assert.False(list.Includes(8));
+            Assert.Equal(2, list.Length);
         }
 
         [Fact]
@@ -76,6 +82,8 @@ namespace DataStructuresTests
             list.Insert(6);
 
             Assert.Equal("{ 6 } -> { 3 } -> NULL", list.ToString());
+            Assert.Equal(2, list.Length);
+
         }
 
         [Fact]
@@ -87,6 +95,8 @@ namespace DataStructuresTests
             list.Insert(6);
 
             Assert.Equal("5", list.Tail.ToString());
+            Assert.Equal(2, list.Length);
+
         }
 
         [Fact]
@@ -99,6 +109,8 @@ namespace DataStructuresTests
             list.Append(5);
 
             Assert.Equal("5", list.Tail.ToString());
+            Assert.Equal(3, list.Length);
+
         }
 
         [Fact]
@@ -111,6 +123,8 @@ namespace DataStructuresTests
             list.Append(9);
 
             Assert.Equal("9", list.Tail.ToString());
+            Assert.Equal(3, list.Length);
+
         }
 
         [Fact]
@@ -124,6 +138,8 @@ namespace DataStructuresTests
             list.InsertBefore(3, 5);
 
             Assert.Equal("5", list.Head.ToString());
+            Assert.Equal(4, list.Length);
+
         }
 
         [Fact]
@@ -137,6 +153,8 @@ namespace DataStructuresTests
             list.InsertBefore(2, 5);
 
             Assert.Equal("{ 3 } -> { 5 } -> { 2 } -> { 1 } -> NULL", list.ToString());
+            Assert.Equal(4, list.Length);
+
         }
 
 
@@ -151,6 +169,8 @@ namespace DataStructuresTests
             list.InsertAfter(5, 3);
 
             Assert.Equal("{ 6 } -> { 5 } -> { 3 } -> { 4 } -> NULL", list.ToString());
+            Assert.Equal(4, list.Length);
+
         }
 
         [Fact]
@@ -164,7 +184,10 @@ namespace DataStructuresTests
             list.InsertAfter(3, 5);
 
             Assert.Equal("5", list.Tail.ToString());
+            Assert.Equal(4, list.Length);
+
         }
+
 
     }
 }
