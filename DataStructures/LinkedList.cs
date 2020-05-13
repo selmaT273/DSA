@@ -185,9 +185,26 @@ namespace DataStructures
 
         }
 
-        public void kthFromEnd(int k)
+        public int kthFromEnd(int k)
         {
+            if(k < 0)
+            {
+                throw new ArgumentException($"{k} is not a valid input");
+            }
 
+            if(k > Length)
+            {
+                throw new ArgumentException($"The list is shorter than {k} length.");
+            }
+
+            Node currentNode = Head;
+
+            for (int i = 0; i < (Length - 1) - k; i++)
+            {
+                currentNode = currentNode.Next;
+            }
+
+            return currentNode.Data;
         }
     }
 

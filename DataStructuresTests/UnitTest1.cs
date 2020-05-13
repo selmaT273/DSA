@@ -188,6 +188,18 @@ namespace DataStructuresTests
 
         }
 
+        [Fact]
+        public void KReturnsCorrectValueTest()
+        {
+            LinkedList list = new LinkedList();
+
+            list.Insert(1);
+            list.Insert(2);
+            list.Insert(3);
+            list.Insert(4);
+
+            Assert.Equal(3, list.kthFromEnd(2));
+        }
 
     }
 }
