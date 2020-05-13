@@ -201,5 +201,21 @@ namespace DataStructuresTests
             Assert.Equal(3, list.kthFromEnd(2));
         }
 
+        [Fact]
+        public void KThrowsIfGreatherThanLengthTest()
+        {
+            LinkedList list = new LinkedList();
+
+            list.Insert(1);
+            list.Insert(2);
+            list.Insert(3);
+            list.Insert(4);
+
+            Action action = () => list.kthFromEnd(5);
+
+            ArgumentException exception = Assert.Throws<ArgumentException>(action);
+            Assert.Equal("The list is shorter than 5 length.", exception.Message);
+        }
+
     }
 }
