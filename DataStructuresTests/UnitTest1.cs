@@ -245,5 +245,17 @@ namespace DataStructuresTests
             ArgumentException exception = Assert.Throws<ArgumentException>(action);
             Assert.Equal("-2 is not a valid input", exception.Message);
         }
+
+        [Fact]
+        public void LengthIs1Test()
+        {
+            LinkedList list = new LinkedList();
+
+            list.Insert(2);
+
+
+            Assert.Equal(2, list.kthFromEnd(0));
+        }
+
     }
 }
