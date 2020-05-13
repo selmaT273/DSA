@@ -229,5 +229,21 @@ namespace DataStructuresTests
 
             Assert.Equal(4, list.kthFromEnd(4));
         }
+
+        [Fact]
+        public void KIsNegativeTest()
+        {
+            LinkedList list = new LinkedList();
+
+            list.Insert(1);
+            list.Insert(2);
+            list.Insert(3);
+            list.Insert(4);
+
+            Action action = () => list.kthFromEnd(-2);
+
+            ArgumentException exception = Assert.Throws<ArgumentException>(action);
+            Assert.Equal("-2 is not a valid input", exception.Message);
+        }
     }
 }
