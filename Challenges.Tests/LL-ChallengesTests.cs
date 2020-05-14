@@ -58,5 +58,19 @@ namespace Challenges.Tests
 
             Assert.Equal("{ 4 } -> { 7 } -> { 5 } -> { 9 } -> { 10 } -> NULL", LL_Challenges.mergeLists(list1, list2).ToString());
         }
+
+        [Fact]
+        public void MergeList1EmptyTest()
+        {
+            LinkedList list1 = new LinkedList();
+
+
+            LinkedList list2 = new LinkedList();
+
+            list2.Append(7);
+            list2.Append(9);
+
+            Assert.Equal("{ 7 } -> { 9 } -> NULL", LL_Challenges.mergeLists(list1, list2).ToString());
+        }
     }
 }
