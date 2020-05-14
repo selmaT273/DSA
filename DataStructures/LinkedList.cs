@@ -6,6 +6,7 @@ namespace DataStructures
     {
         public Node Head { get; set; }
         public Node Tail { get; set; }
+        public int Length { get; set; }
 
         public override string ToString()
         {
@@ -51,6 +52,7 @@ namespace DataStructures
                 node.Next = Head;
                 Head = node;
             }
+            Length += 1;
         }
 
         public bool Includes(int value)
@@ -91,6 +93,7 @@ namespace DataStructures
                 Tail.Next = node;
                 Tail = node;
             }
+            Length += 1;
         }
 
         public void InsertBefore(int value, int newValue)
@@ -132,7 +135,9 @@ namespace DataStructures
                 {
                     throw new ArgumentException($"{value} not found in Linked List");
                 }
+                Length += 1;
             }
+            
                 
         }
 
@@ -176,7 +181,30 @@ namespace DataStructures
                     throw new ArgumentException($"{value} not found in Linked List");
                 }
             }
+            Length += 1;
 
+        }
+
+        public int kthFromEnd(int k)
+        {
+            if(k < 0)
+            {
+                throw new ArgumentException($"{k} is not a valid input");
+            }
+
+            if(k > Length)
+            {
+                throw new ArgumentException($"The list is shorter than {k} length.");
+            }
+
+            Node currentNode = Head;
+
+            for (int i = 0; i < (Length - 1) - k; i++)
+            {
+                currentNode = currentNode.Next;
+            }
+
+            return currentNode.Data;
         }
     }
 
