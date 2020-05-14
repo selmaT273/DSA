@@ -26,7 +26,7 @@ namespace Challenges.Tests
         }
 
         [Fact]
-        public void Merge2ListsDifferentLengthTest()
+        public void MergeList2ShorterTest()
         {
             LinkedList list1 = new LinkedList();
 
@@ -40,6 +40,23 @@ namespace Challenges.Tests
             list2.Append(9);
 
             Assert.Equal("{ 4 } -> { 7 } -> { 5 } -> { 9 } -> { 6 } -> NULL", LL_Challenges.mergeLists(list1, list2).ToString());
+        }
+
+        [Fact]
+        public void MergeList1ShorterTest()
+        {
+            LinkedList list1 = new LinkedList();
+
+            list1.Append(4);
+            list1.Append(5);
+
+            LinkedList list2 = new LinkedList();
+
+            list2.Append(7);
+            list2.Append(9);
+            list2.Append(10);
+
+            Assert.Equal("{ 4 } -> { 7 } -> { 5 } -> { 9 } -> { 10 } -> NULL", LL_Challenges.mergeLists(list1, list2).ToString());
         }
     }
 }
