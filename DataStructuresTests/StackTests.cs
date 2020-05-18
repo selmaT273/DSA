@@ -48,5 +48,17 @@ namespace DataStructuresTests
 
             Assert.Equal(8, stack.Peek());
         }
+
+        [Fact]
+        public void CanPopOneTest()
+        {
+            Stack<int> stack = new Stack<int>();
+
+            stack.Push(3);
+            stack.Push(5);
+            stack.Push(8);
+
+            Assert.Equal(8, stack.Pop());
+        }
     }
 }

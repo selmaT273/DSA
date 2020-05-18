@@ -14,7 +14,15 @@ namespace DataStructures.Stack
 
         public T Pop()
         {
-            return default;
+            if (top == null)
+            {
+                throw new ArgumentException();
+            }
+
+            Node topValue = top;
+            top = top.Next;
+
+            return topValue.Value;
         }
 
         public T Peek()
