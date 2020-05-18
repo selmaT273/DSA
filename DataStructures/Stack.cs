@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DataStructures
+namespace DataStructures.Stack
 {
     public class Stack<T>
     {
@@ -7,7 +7,9 @@ namespace DataStructures
 
         public void Push(T value)
         {
-
+            Node newValue = new Node(value);
+            newValue.Next = top;
+            top = newValue;
         }
 
         public T Pop()
@@ -25,10 +27,27 @@ namespace DataStructures
             return default;
         }
 
-        private class Node
+        public bool IsEmpty()
+        {
+            if (top == null)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public class Node
         {
             public Node Next { get; set; }
             public T Value { get; set; }
+            public Node(T value)
+            {
+                Value = value;
+            }
         }
+
     }
+
+
 }

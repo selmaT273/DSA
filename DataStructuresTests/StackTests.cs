@@ -1,5 +1,5 @@
 ﻿using System;
-using DataStructures;
+using DataStructures.Stack;
 using Xunit;
 
 namespace DataStructuresTests
@@ -7,7 +7,7 @@ namespace DataStructuresTests
     public class StackTests
     {
         [Fact]
-        public void PeekEmptyStackThrows()
+        public void PeekEmptyStackThrowsTest()
         {
             Stack<object> stack = new Stack<object>();
 
@@ -15,6 +15,14 @@ namespace DataStructuresTests
             {
                 stack.Peek();
             });
+        }
+
+        [Fact]
+        public void IsEmptyReturnsTrueIfEmptyTest()
+        {
+            Stack<object> stack = new Stack<object>();
+
+            Assert.True(stack.IsEmpty());
         }
     }
 }
