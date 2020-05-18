@@ -24,7 +24,7 @@ namespace DataStructures.Stack
                 throw new ArgumentException();
             }
 
-            return default;
+            return top.Value;
         }
 
         public bool IsEmpty()

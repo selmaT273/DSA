@@ -24,5 +24,17 @@ namespace DataStructuresTests
 
             Assert.True(stack.IsEmpty());
         }
+
+        [Fact]
+        public void CanPushToStackTest()
+        {
+            Stack<int> stack = new Stack<int>();
+
+            stack.Push(5);
+
+            Assert.Equal(5, stack.Peek());
+            
+            
+        }
     }
 }
