@@ -76,5 +76,16 @@ namespace DataStructuresTests
 
             Assert.True(stack.IsEmpty());
         }
+
+        [Fact]
+        public void PopEmptyStackThrowsTest()
+        {
+            Stack<object> stack = new Stack<object>();
+
+            Assert.Throws<ArgumentException>(() =>
+            {
+                stack.Pop();
+            });
+        }
     }
 }
