@@ -60,5 +60,21 @@ namespace DataStructuresTests
 
             Assert.Equal(8, stack.Pop());
         }
+
+        [Fact]
+        public void CanPopUntilEmptyTest()
+        {
+            Stack<int> stack = new Stack<int>();
+
+            stack.Push(3);
+            stack.Push(5);
+            stack.Push(8);
+
+            stack.Pop();
+            stack.Pop();
+            stack.Pop();
+
+            Assert.True(stack.IsEmpty());
+        }
     }
 }
