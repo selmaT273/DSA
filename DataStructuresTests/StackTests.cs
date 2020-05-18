@@ -36,5 +36,17 @@ namespace DataStructuresTests
             
             
         }
+
+        [Fact]
+        public void CanPushMultipleValuesTest()
+        {
+            Stack<int> stack = new Stack<int>();
+
+            stack.Push(3);
+            stack.Push(5);
+            stack.Push(8);
+
+            Assert.Equal(8, stack.Peek());
+        }
     }
 }
