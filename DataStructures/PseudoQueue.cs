@@ -12,13 +12,18 @@ namespace DataStructures
 
         public void Enqueue(T data)
         {
-            stack1.Push(data);
 
             while (!stack1.IsEmpty())
             {
                 stack2.Push(stack1.Pop());
             }
-            
+
+            stack1.Push(data);
+
+            while (!stack2.IsEmpty())
+            {
+                stack1.Push(stack2.Pop());
+            }
         }
 
         public T Dequeue()
@@ -26,12 +31,12 @@ namespace DataStructures
             if (stack1.IsEmpty())
                 throw new Exception("Queue is Empty");
 
-            return stack2.Pop();
+            return stack1.Pop();
         }
 
         public T Peek()
         {
-            return stack2.Peek();
+            return stack1.Peek();
         }
     }
 }
