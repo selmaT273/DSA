@@ -17,67 +17,67 @@ namespace DataStructuresTests
         }
     }
 
-    [Fact]
-    public void PeekEmptyQueueThrowsTest()
-    {
-        PseudoQueue<object> queue = new PseudoQueue<object>();
+    //[Fact]
+    //public void PeekEmptyQueueThrowsTest()
+    //{
+    //    PseudoQueue<object> queue = new PseudoQueue<object>();
 
-        Assert.Throws<ArgumentException>(() =>
-        {
-            queue.Peek();
-        });
-    }
+    //    Assert.Throws<ArgumentException>(() =>
+    //    {
+    //        queue.Peek();
+    //    });
+    //}
 
     
 
-    [Fact]
-    public void PseudoEnqueueMultipleValuesTest()
-    {
-        PseudoQueue<int> pseudoQueue = new PseudoQueue<int>();
+    //[Fact]
+    //public void PseudoEnqueueMultipleValuesTest()
+    //{
+    //    PseudoQueue<int> pseudoQueue = new PseudoQueue<int>();
 
-        pseudoQueue.Enqueue(3);
-        pseudoQueue.Enqueue(5);
-        pseudoQueue.Enqueue(8);
+    //    pseudoQueue.Enqueue(3);
+    //    pseudoQueue.Enqueue(5);
+    //    pseudoQueue.Enqueue(8);
 
-        Assert.Equal(3, pseudoQueue.Peek());
-    }
+    //    Assert.Equal(3, pseudoQueue.Peek());
+    //}
 
-    [Fact]
-    public void CanDequeueOneTest()
-    {
-        Queue<int> queue = new Queue<int>();
+    //[Fact]
+    //public void CanDequeueOneTest()
+    //{
+    //    Queue<int> queue = new Queue<int>();
 
-        queue.Enqueue(3);
-        queue.Enqueue(5);
-        queue.Enqueue(8);
+    //    queue.Enqueue(3);
+    //    queue.Enqueue(5);
+    //    queue.Enqueue(8);
 
-        Assert.Equal(3, queue.Dequeue());
-    }
+    //    Assert.Equal(3, queue.Dequeue());
+    //}
 
-    [Fact]
-    public void CanDequeueUntilEmptyTest()
-    {
-        Queue<int> queue = new Queue<int>();
+    //[Fact]
+    //public void CanDequeueUntilEmptyTest()
+    //{
+    //    Queue<int> queue = new Queue<int>();
 
-        queue.Enqueue(3);
-        queue.Enqueue(5);
-        queue.Enqueue(8);
+    //    queue.Enqueue(3);
+    //    queue.Enqueue(5);
+    //    queue.Enqueue(8);
 
-        queue.Dequeue();
-        queue.Dequeue();
-        queue.Dequeue();
+    //    queue.Dequeue();
+    //    queue.Dequeue();
+    //    queue.Dequeue();
 
-        Assert.True(queue.IsEmpty());
-    }
+    //    Assert.True(queue.IsEmpty());
+    //}
 
-    [Fact]
-    public void DequeueEmptyStackThrowsTest()
-    {
-        Queue<object> queue = new Queue<object>();
+    //[Fact]
+    //public void DequeueEmptyStackThrowsTest()
+    //{
+    //    Queue<object> queue = new Queue<object>();
 
-        Assert.Throws<ArgumentException>(() =>
-        {
-            queue.Dequeue();
-        });
-    }
+    //    Assert.Throws<ArgumentException>(() =>
+    //    {
+    //        queue.Dequeue();
+    //    });
+    //}
 }
