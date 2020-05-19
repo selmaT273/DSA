@@ -90,3 +90,34 @@ The approach I used to write this method has a linear time-space complexity.
 
 ## Solution
 [Kth From The End](assets/ll-from-end.jpg)
+
+# Code Challenge 10: Stacks and Queues Implementation
+
+## Problem Domain
+- Create a stack that can
+    - Push onto a stack
+    - Pop off of the stack
+    - Can peek the next item on the stack
+    - Can instantiate an empty stack
+    - Throws an exception when trying to pop or peek on an empty stack
+- Create a queue that can
+    - Enqueue into a queue
+    - Dequeue out of a queue
+    - Peek into a queue
+    - Instantiate an empty queue
+    - Throw an exception when trying to dequeue or peek on an empty queue
+
+## Approach and Efficiency
+The approach I took was O(1), as we do not need to traverse the whole stack or queue in order to add or remove from them.
+
+## API
+The methods publicly available to the stack are:
+- Push
+- Pop
+- IsEmpty
+- Peek
+The methods publicly available to the queue are:
+- Enqueue
+- Dequeue
+- IsEmpty
+- Peek
