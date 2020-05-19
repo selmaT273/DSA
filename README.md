@@ -121,3 +121,14 @@ The methods publicly available to the queue are:
 - Dequeue
 - IsEmpty
 - Peek
+
+# Code Challenge 11: Queue with Stacks
+
+## Problem Domain
+Implement a queue by using 2 stacks in a class called PseudoQueue, which should also include the ability to Enqueue and Dequeue.
+
+## Approach and Efficiency
+The approach I took to solving this code challenge was a time-efficency of O(1).
+
+## Solution
+[Queue with Stacks](assets/PseudoQueue.jpg)
