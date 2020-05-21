@@ -23,12 +23,12 @@ namespace DataStructuresTests
             Assert.False(bracketValidation.MultiBracketValidation("[({}]"));
         }
 
-        //[Fact]
-        //public void ReturnsFalseIfOnlyOneBracketInStringTest()
-        //{
-        //    BracketValidation bracketValidation = new BracketValidation();
+        [Fact]
+        public void ReturnsFalseIfOnlyOneBracketInStringTest()
+        {
+            BracketValidation bracketValidation = new BracketValidation();
 
-        //    Assert.False(bracketValidation.MultiBracketValidation("["));
-        //}
+            Assert.False(bracketValidation.MultiBracketValidation("["));
+        }
     }
 }

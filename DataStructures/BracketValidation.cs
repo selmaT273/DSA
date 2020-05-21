@@ -22,10 +22,14 @@ namespace DataStructures
                         error = true;
                         break;
                     }
+                    else
+                    {
+                        stack.Pop();
+                    }
                 }
             }
 
-            if (error)
+            if (error || !stack.IsEmpty())
                 return false;
             else
                 return true;
