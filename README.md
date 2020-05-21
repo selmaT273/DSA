@@ -132,3 +132,14 @@ The approach I took to solving this code challenge was a time-efficency of O(1).
 
 ## Solution
 [Queue with Stacks](assets/PseudoQueue.jpg)
+
+# Code Challenge 12: FIFO Animal Shelter
+
+## Problem Domain
+Create a class called AnimalShelter which holds only dogs and cats. The shelter operates using a FIFO approach that implements an Enqueue method and a Dequeue method. 
+
+## Approach and Efficiency
+The approach I used in tackling this challenge is O(1).
+
+## Solution
+[FIFO Animal Shelter](assets/AnimalShelter.jpg)
