@@ -143,3 +143,8 @@ The approach I used in tackling this challenge is O(1).
 
 ## Solution
 [FIFO Animal Shelter](assets/AnimalShelter.jpg)
+
+# Code Challenge 13: Multi Bracket Validation
+
+## Solution
+[Bracket Validation](assets/Bracket-Validation.jpg)
