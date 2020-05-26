@@ -36,5 +36,29 @@ namespace DataStructures.Trees
                 Root = new Node(value);
             }
         }
+
+        public override string ToString()
+        {
+            if (Root == null)
+            {
+                return "[]";
+            }
+            else
+            {
+                string output = stringBuilder(Root, "");
+                return "[" + output + "]";
+            }
+
+        }
+        public string stringBuilder(Node node, string output)
+        {
+            if (node != null)
+            {
+                stringBuilder(node.Left, output);
+                output += ", " + node;
+                stringBuilder(node.Right, output);
+            }
+            return output;
+        }
     }
 }

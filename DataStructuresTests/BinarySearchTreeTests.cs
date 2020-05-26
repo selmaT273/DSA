@@ -23,5 +23,16 @@ namespace DataStructuresTests
 
             Assert.Equal(5, binarySearchTree.Root.Value);
         }
+
+        [Fact]
+        public void CanAddMultipleNodes()
+        {
+            BinarySearchTree binarySearchTree = new BinarySearchTree();
+
+            binarySearchTree.Add(4);
+            binarySearchTree.Add(2);
+
+            Assert.Equal("[2, 4]", binarySearchTree.ToString());
+        }
     }
 }
