@@ -28,5 +28,13 @@ namespace DataStructures.Trees
         {
             Root = null;
         }
+
+        public void Add(int value)
+        {
+            if (Root == null)
+            {
+                Root = new Node(value);
+            }
+        }
     }
 }

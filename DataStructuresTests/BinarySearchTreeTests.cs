@@ -13,5 +13,15 @@ namespace DataStructuresTests
 
             Assert.Null(binarySearchTree.Root);
         }
+
+        [Fact]
+        public void CreateRootNodeIfNullTest()
+        {
+            BinarySearchTree binarySearchTree = new BinarySearchTree();
+
+            binarySearchTree.Add(5);
+
+            Assert.Equal(5, binarySearchTree.Root.Value);
+        }
     }
 }
