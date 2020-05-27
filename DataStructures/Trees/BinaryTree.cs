@@ -61,6 +61,34 @@ namespace DataStructures.Trees
         {
             return string.Join(", ", PreOrder(Root, new Queue<int>()));
         }
+
+       public Queue<int> BreadthFirst()
+        {
+            Queue<int> result = new Queue<int>();
+            if(Root == null)
+            {
+                return result;
+            }
+
+            Queue<Node> nodes = new Queue<Node>();
+            nodes.Enqueue(Root);
+
+            while (nodes.Count != 0)
+            {
+                Node node = nodes.Dequeue();
+                result.Enqueue(node.Value);
+                if(node.Left != null)
+                {
+                    nodes.Enqueue(node.Left);
+                }
+                if(node.Right != null)
+                {
+                    nodes.Enqueue(node.Right);
+                }
+            }
+            return result;
+        }
+
     }
 
     public class Node
