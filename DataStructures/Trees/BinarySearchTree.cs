@@ -50,6 +50,49 @@ namespace DataStructures.Trees
             }
         }
 
+        public bool Contains(int value)
+        {
+            if (Root == null)
+            {
+                return false;
+            }
+            else
+            {
+                return Contains(Root, value);
+            }
+        }
+
+        private bool Contains(Node node, int value)
+        {
+            if(node.Value == value)
+            {
+                return true;
+            }
+            else if (value < node.Value)
+            {
+                if(node.Left == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return Contains(node.Left, value);
+                    
+                }
+            }
+            else
+            {
+                if(node.Right == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return Contains(node.Right, value);
+                }
+            }
+        }
+
         
     }
 }
