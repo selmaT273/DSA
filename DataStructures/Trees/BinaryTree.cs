@@ -40,6 +40,22 @@ namespace DataStructures.Trees
             }
         }
 
+        public Queue<int> PostOrder(Node node, Queue<int> queue)
+        {
+            if (node == null)
+            {
+                return queue;
+            }
+            else
+            {
+                PostOrder(node.Left, queue);
+                PostOrder(node.Right, queue);
+                queue.Enqueue(node.Value);
+
+                return queue;
+            }
+        }
+
 
         public override string ToString()
         {
