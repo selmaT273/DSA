@@ -24,6 +24,22 @@ namespace DataStructures.Trees
             
         }
 
+        public Queue<int> InOrder(Node node, Queue<int> queue)
+        {
+            if (node == null)
+            {
+                return queue;
+            }
+            else
+            {
+                InOrder(node.Left, queue);
+                queue.Enqueue(node.Value);
+                InOrder(node.Right, queue);
+
+                return queue;
+            }
+        }
+
 
         public override string ToString()
         {
