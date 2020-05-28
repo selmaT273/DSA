@@ -54,5 +54,21 @@ namespace DataStructuresTests
 
             Assert.Equal("4, 5, 2, 3, 1", postOrder);
         }
+
+        [Fact]
+        public void CanBreadthFirstTest()
+        {
+            BinaryTree tree = new BinaryTree();
+
+            tree.Root = new Node(1);
+            tree.Root.Left = new Node(2);
+            tree.Root.Right = new Node(3);
+            tree.Root.Left.Left = new Node(4);
+            tree.Root.Left.Right = new Node(5);
+
+            string breadthFirst = string.Join(", ", tree.BreadthFirst());
+
+            Assert.Equal("1, 2, 3, 4, 5", breadthFirst);
+        }
     }
 }
