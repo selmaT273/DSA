@@ -7,6 +7,8 @@ Insertion Sort is a sorting algorithm that sorts each element one at a time by c
 ## Trace
 Sample Array: [8, 4, 23, 42, 16, 15]
 
+## Implementation
+
 First we start with our unsorted array, and look at the first value as if it is already in its tentative sorted place. This value is j.
 ![Starting place](../assets/insertion-sort-images/insertion-sort1.JPG)
 
@@ -29,3 +31,5 @@ Finally we look at 15 and compare it with 42. We repeat the same steps as in the
 
 
 
+## Time Space Complexity
+The time complexity of this approach to an insertion sort is O(n^2) when using the nested for loops and the space complexity is O(1). 
