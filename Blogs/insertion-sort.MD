@@ -19,7 +19,7 @@ Then, we compare temp (42) with j (23). Since temp is more than j we leave both 
 [Third pass](../assets/insertion-sort-images/insertion-sort3.JPG)
 
 Next, we look at temp (16) and j (42). Temp is less than J, so we look one to the left of j and see if temp is less than that value (23). It is, so then we check again one to the left of that (8) and see if temp is less. It is greater than 8 and less than 23 so then we put temp to the left of 23.
-[Fourth pass](../assets/insertion-sort-images/insertion-sort4.JPG)
+[Fourth pass](../../assets/insertion-sort-images/insertion-sort4.JPG)
 [Fifth image](../assets/insertion-sort-images/insertion-sort5.JPG)
 
 
