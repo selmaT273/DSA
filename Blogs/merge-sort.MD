@@ -12,13 +12,13 @@ First, we find the midpoint of the array.
 ![Initial pass](../assets/merge-sort-images/merge-sort1.jpg)
 
 Then, we continue to find the midpoints of subarrays until the subarrays only contain 1 element.
-![Initial pass 2](../assets/merge-sort-images/merge-sort2.jpg)
+![Initial pass 2](../assets/merge-sort-images/merge-sort2.JPG)
 
 Next, we sort all subarrays of 1 element and merge those results into subarrays of 2 elements.
-![Second pass](../assets/merge-sort-images/merge-sort3.jpg)
+![Second pass](../assets/merge-sort-images/merge-sort3.JPG)
 
 Then, we merge the results into subarrays of 3 elements.
-![Third pass](../assets/merge-sort-images/merge-sort4.jpg)
+![Third pass](../assets/merge-sort-images/merge-sort4.JPG)
 
 Next, we start to merge the subarrays of 3 back into a sorted array of 6 y comparing i and j to see which one is greater and then also comparing it with k, which is keeping track of our place in the array of 6.
 ![Fourth pass](../assets/merge-sort-images/merge-sort5.jpg)
