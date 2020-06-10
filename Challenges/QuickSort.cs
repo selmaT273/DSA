@@ -5,7 +5,7 @@ namespace Challenges
     {
         public static int[] QuickSorting(int[] inputArr, int left, int right)
         {
-            int pivotIndex = 0;
+            int pivotIndex = left;
 
             if(left < right)
             {
@@ -19,7 +19,7 @@ namespace Challenges
 
             if (pivotIndex < right)
             {
-                QuickSorting(inputArr, pivotIndex, right);
+                QuickSorting(inputArr, pivotIndex + 1, right);
             }
 
             return inputArr;
@@ -48,14 +48,16 @@ namespace Challenges
                     r--;
                 }
 
-                if(l >= r)
+                if(l < r)
                 {
-                    Swap(inputArr, left, right);
+                    Swap(inputArr, l, r);
 
                     l++;
                     r--;
                 }
             }
+
+            Swap(inputArr, l, right);
 
             return l;
 
