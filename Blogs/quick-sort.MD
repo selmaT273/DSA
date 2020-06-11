@@ -1,9 +1,6 @@
 # Code Challenge 28: Quick Sort
 Quicksort is a divide and conquer sorting algorithm that works in place and is relatively efficient compared with some other sorting algorithms thus why it is called "Quick" sort. This algorithm divides an array into subarrays by its pivot point, and rearranges the elements so that all the elements that are less than or equal to the pivot are to its left, and the elements greater than the pivot are to its right. This is done recursively to all the subarrays. Once this process is done, the elements should all be in their sorted position. 
 
-## Pseudocode
-[Quicksort Pseudocode](assets/quick-sort-images/quick-sort-pseudo.png)
-
 ## Trace
 Sample Array: [8, 4, 23, 42, 16, 15]
 
@@ -39,9 +36,10 @@ Since we know that the elements to the left of the left counter are less than th
 
 Next, we call Quicksort on the right subarray and select the pivot. We move the pivot to the end of the subarray.
 ![Eleventh Pass](../assets/quick-sort-images/quick-sort12.jpg)
-![Twelvth Pass](../assets/quick-sort-images/quick-sort13.jpg)
 
 Then we move the left counter to the right until it finds a value greater than or equal to the pivot. Then we move the right counter until it encounters the left counter or finds a value less than the pivot. We then swap the left and right. 
+![Twelvth Pass](../assets/quick-sort-images/quick-sort13.jpg)
+
 ![Thirteenth Pass](../assets/quick-sort-images/quick-sort14.jpg)
 
 Then we move the left counter to the right until it finds a value greater than or equal to the pivot, and move the right counter until it encounters the left counter or finds a value less than the pivot.
