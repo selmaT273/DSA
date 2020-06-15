@@ -8,7 +8,7 @@ namespace Challenges.Tests
         [Fact]
         public void CanAddValueTest()
         {
-            HashTable h = new HashTable(3);
+            HashTable h = new HashTable(5);
 
             h.Add("stacey", "stacey teltser");
 

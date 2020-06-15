@@ -4,34 +4,9 @@ using System.Text;
 
 namespace Challenges
 {
-    public class HashNode
-    {
-        public string Key { get; set; }
-        public string Value { get; set; }
-        public HashNode Next { get; set; }
-
-        public HashNode(string key, string value)
-        {
-            Key = key;
-            Value = value;
-            Next = null;
-        }
-
-    }
 
     public class HashTable
     {
-        private List<HashNode>[] hashList;
-        private static int size = 1024;
-
-        public HashTable()
-        {
-            hashList = new List<HashNode>[size];
-            for (int i = 0; i < size; i++)
-            {
-                hashList[i] = new List<HashNode>();
-            }
-        }
 
         public int CreateHash(string key)
         {
@@ -132,6 +107,21 @@ namespace Challenges
                 }
                 current.Next = newHashNode;
             }
+        }
+
+        public class HashNode
+        {
+            public string Key { get; set; }
+            public string Value { get; set; }
+            public HashNode Next { get; set; }
+
+            public HashNode(string key, string value)
+            {
+                Key = key;
+                Value = value;
+                Next = null;
+            }
+
         }
     }
 
