@@ -5,14 +5,14 @@ namespace Challenges.Tests
 {
     public class HashTableTests
     {
-        [Fact]
-        public void CanAddValueTest()
-        {
-            HashTable h = new HashTable(5);
+        //[Fact]
+        //public void CanAddValueTest()
+        //{
+        //    HashTable h = new HashTable(5);
 
-            h.Add("stacey", "stacey teltser");
+        //    h.Add("stacey", "stacey teltser");
 
-            Assert.True(h.Contains("stacey"));
-        }
+        //    Assert.True(h.Contains("stacey"));
+        //}
     }
 }
