@@ -28,29 +28,5 @@ namespace Challenges
 
             return null; 
         }
-        
-
-        //public string FindRepeatedWord(string inputString)
-        //{
-        //    string inputString;
-        //    var dictionaryTracker = new Dictionary<string, bool>();
-        //    StringBuilder outputString = new StringBuilder();
-        //    string[] eachWord = inputString.Split(new char[] { ' ', ',', ';', '.' },
-        //        StringSplitOptions.RemoveEmptyEntries);
-
-        //    foreach (string current in eachWord)
-        //    {
-        //        string lowerCase = current.ToLower();
-
-        //        if (dictionaryTracker.ContainsKey(lowerCase))
-        //        {
-        //            outputString.Append(current);
-        //            dictionaryTracker.Add(lowerCase, true);
-        //        }
-
-        //    }
-
-        //    return outputString.ToString();
-        //}
     }
 }
