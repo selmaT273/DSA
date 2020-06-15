@@ -1,38 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Challenges
 {
     public class HashNode
     {
-        private string key;
-        private string value;
-        public HashNode()
-        {
-            key = "";
-            value = "";
-        }
+        public string Key { get; set; }
+        public string Value { get; set; }
+        public HashNode Next { get; set; }
+
         public HashNode(string key, string value)
         {
-            this.key = key;
-            this.value = value;
+            Key = key;
+            Value = value;
+            Next = null;
         }
 
-        public string GetKey()
-        {
-            return key;
-        }
-
-        public string GetValue()
-        {
-            return value;
-        }
-
-        public bool Contains(Object o)
-        {
-            HashNode other = (HashNode)o;
-            return other.key == this.key;
-        }
     }
 
     public class HashTable
@@ -49,39 +33,104 @@ namespace Challenges
             }
         }
 
-        private int CreateHash(string s)
+        public int CreateHash(string key)
         {
-            int hash = 0;
-            for (int i = 0; i < s.Length; i++)
+            int index;
+            byte[] totalBytes = Encoding.ASCII.GetBytes(key);
+            int numberOfLetters = 0;
+            for (int i = 0; i < totalBytes.Length; i++)
             {
-                hash += s[i];
+                numberOfLetters += totalBytes[i];
             }
 
-            return (hash % size);
+            index = (numberOfLetters * 599) % 1024;
+            return index;
         }
 
-        public string GetValue(string targetKey)
+        public int Size { get; set; }
+
+        public HashNode[] NodeArray { get; set; }
+
+        public HashTable(int size)
         {
-            int hash = CreateHash(targetKey);
-            List<HashNode> thisList = hashList[hash];
-            foreach (HashNode n in thisList)
+            Size = size;
+            NodeArray = new HashNode[size];
+        }
+
+        public string GetValue(string key)
+        {
+            int index = CreateHash(key);
+            if(NodeArray[index] == null)
             {
-                if (n.GetKey() == targetKey)
+                return null; 
+            }
+
+            if(NodeArray != null)
+            {
+                if(NodeArray[index].Key == key)
                 {
-                    return n.GetValue();
+                    return NodeArray[index].Value;
+                }
+                else
+                {
+                    HashNode current = NodeArray[index];
+                    while(current.Next != null)
+                    {
+                        current = current.Next;
+                        if(current.Key == key)
+                        {
+                            return current.Value;
+                        }
+                    }
                 }
             }
 
-            return "";
+            return null;
         }
 
-        public void Add(HashNode n)
+        public bool Contains(string key)
         {
-            int hash = CreateHash(n.GetKey());
-            List<HashNode> thisList = hashList[hash];
-            if (!thisList.Contains(n))
+            int index = CreateHash(key);
+            if (NodeArray[index] == null)
             {
-                thisList.Add(n);
+                return false;
+            }
+            else
+            {
+                HashNode current = NodeArray[index];
+                if(NodeArray[index].Key == key)
+                {
+                    return true;
+                }
+                while (current.Next != null)
+                {
+                    current = current.Next;
+                    if (current.Key == key)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+
+        public void Add(string key, string value)
+        {
+            int index = CreateHash(key);
+            if (NodeArray[index] == null)
+            {
+                HashNode newHashNode = new HashNode(key, value);
+                NodeArray[index] = newHashNode;
+            }
+            else
+            {
+                HashNode newHashNode = new HashNode(key, value);
+                HashNode current = NodeArray[index];
+                while(current.Next != null)
+                {
+                    current = current.Next;
+                }
+                current.Next = newHashNode;
             }
         }
     }
