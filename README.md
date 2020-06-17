@@ -148,3 +148,28 @@ The approach I used in tackling this challenge is O(1).
 
 ## Solution
 [Bracket Validation](assets/Bracket-Validation.jpg)
+
+# Code Challenge 31: Find First Duplicate Word
+
+## Problem Domain
+Create a method that takes in a long string and outputs the first duplicate word.
+
+## Solution
+[First Duplicate Word](assets/duplicate-words.JPG)
+
+# Code Challenge 32: Find Common Values
+
+## Problem Domain
+Create a method that takes in 2 binary trees and outputs all of the common values between them.
+
+## Solution
+[Common Values](assets/common-nodes.pdf)
+[Common Values Visual](assets/common-nodes-visual.JPG)
+
+# Code Challenge 33: Left Join of Hashmaps
+
+## Problem Domain
+Implement a simplified LEFT JOIN for 2 Hashmaps.
+
+## Solution
+[Left Join Hashmaps](assets/left-join-hashmaps.JPG)
