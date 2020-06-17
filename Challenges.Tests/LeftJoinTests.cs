@@ -26,7 +26,7 @@ namespace Challenges.Tests
 
             string result = LeftJoin.PerformLeftJoin(synonyms, antonyms);
 
-            Assert.Equal("[can, able, cant], \n[will, compliant, NULL], \n[wet, moist, dry] \n", result);
+            Assert.Equal("[can, able, cant], \n[will, compliant, NULL], \n[wet, moist, dry], \n", result);
         }
     }
 }

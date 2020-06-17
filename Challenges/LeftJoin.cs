@@ -52,6 +52,9 @@ namespace Challenges
         public string Antonym { get; set; }
         public string Synonym { get; set; }
 
-        public Combined(string synonym) { Synonym = synonym; }
+        public Combined(string synonym) {
+            Synonym = synonym;
+            Antonym = "NULL";
+        }
     }
 }
