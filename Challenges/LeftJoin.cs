@@ -43,7 +43,7 @@ namespace Challenges
             //                 from result in outputResult.DefaultIfEmpty()
             //                 select (sElements.Key, result.Value);
 
-            return outputString;
+            return outputString.Substring(0, outputString.Length - 3);
         }
     }
 
