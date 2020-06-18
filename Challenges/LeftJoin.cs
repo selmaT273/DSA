@@ -11,11 +11,6 @@ namespace Challenges
             
             string outputString = "";
 
-            //foreach (KeyValuePair<string, string> pair in Synonyms)
-            //{
-            //    outputString += pair.Key + ": " + pair.Value;
-            //}
-
             Dictionary<string, Combined> combined = new Dictionary<string, Combined>();
 
             foreach (KeyValuePair<string, string> pair in synonyms)
