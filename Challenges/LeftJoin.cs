@@ -32,11 +32,7 @@ namespace Challenges
             }
 
 
-            //var joinResult = from sElements in Synonyms
-            //                 join aElements in Antonyms
-            //                 on sElements.Key equals aElements.Key into outputResult
-            //                 from result in outputResult.DefaultIfEmpty()
-            //                 select (sElements.Key, result.Value);
+            
 
             return outputString.Substring(0, outputString.Length - 3);
         }
