@@ -3,8 +3,6 @@ namespace Challenges.Tests
 {
     public class GraphImplementationTests
     {
-        public GraphImplementationTests()
-        {
-        }
+        // Stuff goes here
     }
 }
