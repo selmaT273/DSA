@@ -22,10 +22,23 @@ namespace Challenges.Tests
 
             var node = graph.AddNode(4);
 
-            Assert.Equal(1, graph.Size());
             Assert.NotNull(node);
             Assert.Equal(4, node.Value);
             Assert.Contains(node, graph.GetNodes());
+            Assert.Equal(1, graph.Size());
+        }
+
+        [Fact]
+        public void CanAddEdgeTest()
+        {
+            var graph = new Graph<int>();
+
+            var node1 = graph.AddNode(4);
+            var node2 = graph.AddNode(6);
+
+            var edge = graph.AddEdge(node1, node2);
+
+            Assert.Contains(edge, node1.Edges);
         }
     }
 }
