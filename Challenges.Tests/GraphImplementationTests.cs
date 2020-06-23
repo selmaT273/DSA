@@ -36,9 +36,31 @@ namespace Challenges.Tests
             var node1 = graph.AddNode(4);
             var node2 = graph.AddNode(6);
 
-            var edge = graph.AddEdge(node1, node2);
+            graph.AddEdge(node1, node2);
 
-            Assert.Contains(edge, node1.Edges);
+            Assert.Equal(new[] { node1 }, graph.GetNeighbors(node2));
+            Assert.Equal(new[] { node2 }, graph.GetNeighbors(node1));
+
+
         }
+
+        [Fact]
+        public void CanGetNeighborsTest()
+        {
+            var graph = new Graph<int>();
+
+            var node1 = graph.AddNode(4);
+            var node2 = graph.AddNode(6);
+            var node3 = graph.AddNode(2);
+
+            graph.AddEdge(node1, node2);
+            graph.AddEdge(node1, node3);
+
+            Assert.Equal(new[] { node1 }, graph.GetNeighbors(node2));
+            Assert.Equal(new[] { node1 }, graph.GetNeighbors(node3));
+            Assert.Equal(new[] { node2, node3 }, graph.GetNeighbors(node1));
+        }
+
+        
     }
 }

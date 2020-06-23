@@ -6,19 +6,8 @@ using System.Collections.ObjectModel;
 namespace Challenges
 {
 
-  
-
-    // void AddEdge(Node node1, Node node2);
-
-    // void AddEdge(Node node1, Node node2, int? weight = null); <-- can add weight in later
-
-
     // IEnumerable<Node> GetNeighbors(Node node) => node.Neighbors;
 
-
-    // class Node { ... }
-
-    
 
     public class Graph<T>
     {
@@ -36,14 +25,29 @@ namespace Challenges
             return nodes;
         }
 
+        public IEnumerable<Node> GetNeighbors(Node node)
+        {
+            List<Node> adjList = new List<Node>();
+
+            foreach (Edge edge in node.Edges)
+            {
+                adjList.Add(edge.Node2);
+
+
+            }
+
+            return adjList;
+
+        }
+
         public int Size() => nodes.Count;
 
-        public Edge AddEdge(Node node1, Node node2, int weight = 1)
+        public void AddEdge(Node node1, Node node2, int weight = 1)
         {
             var edge = new Edge(node1, node2, weight);
+            var reversed = new Edge(node2, node1, weight);
             node1.Edges.Add(edge);
-            node2.Edges.Add(edge);
-            return edge;
+            node2.Edges.Add(reversed);
         }
 
         public class Node
