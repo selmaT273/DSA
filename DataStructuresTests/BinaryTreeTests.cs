@@ -10,7 +10,7 @@ namespace DataStructuresTests
         [Fact]
         public void CanPreOrderTest()
         {
-            BinaryTree tree = new BinaryTree();
+            BinaryTree<int> tree = new BinaryTree<int>();
 
             tree.Root = new Node(1);
             tree.Root.Left = new Node(2);
@@ -26,7 +26,7 @@ namespace DataStructuresTests
         [Fact]
         public void CanInOrderTest()
         {
-            BinaryTree tree = new BinaryTree();
+            BinaryTree<int> tree = new BinaryTree<int>();
 
             tree.Root = new Node(1);
             tree.Root.Left = new Node(2);
@@ -42,7 +42,7 @@ namespace DataStructuresTests
         [Fact]
         public void CanPostOrderTest()
         {
-            BinaryTree tree = new BinaryTree();
+            BinaryTree<int> tree = new BinaryTree<int>();
 
             tree.Root = new Node(1);
             tree.Root.Left = new Node(2);
@@ -58,7 +58,7 @@ namespace DataStructuresTests
         [Fact]
         public void CanBreadthFirstTest()
         {
-            BinaryTree tree = new BinaryTree();
+            BinaryTree<int> tree = new BinaryTree<int>();
 
             tree.Root = new Node(1);
             tree.Root.Left = new Node(2);

@@ -9,7 +9,7 @@ namespace DataStructuresTests
         [Fact]
         public void InitializeEmptyTreeTest()
         {
-            BinarySearchTree binarySearchTree = new BinarySearchTree();
+            BinarySearchTree<int> binarySearchTree = new BinarySearchTree<int>();
 
             Assert.Null(binarySearchTree.Root);
         }
@@ -17,7 +17,7 @@ namespace DataStructuresTests
         [Fact]
         public void CreateRootNodeIfNullTest()
         {
-            BinarySearchTree binarySearchTree = new BinarySearchTree();
+            BinarySearchTree<int> binarySearchTree = new BinarySearchTree<int>();
 
             binarySearchTree.Add(5);
 
@@ -27,7 +27,7 @@ namespace DataStructuresTests
         [Fact]
         public void CanAddMultipleNodesTest()
         {
-            BinarySearchTree binarySearchTree = new BinarySearchTree();
+            BinarySearchTree<int> binarySearchTree = new BinarySearchTree<int>();
 
             binarySearchTree.Add(4);
             binarySearchTree.Add(2);
@@ -38,7 +38,7 @@ namespace DataStructuresTests
         [Fact]
         public void ContainsValueTest()
         {
-            BinarySearchTree binarySearchTree = new BinarySearchTree();
+            BinarySearchTree<int> binarySearchTree = new BinarySearchTree<int>();
 
             binarySearchTree.Add(4);
             binarySearchTree.Add(2);

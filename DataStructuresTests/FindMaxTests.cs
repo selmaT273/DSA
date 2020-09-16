@@ -11,7 +11,7 @@ namespace DataStructuresTests
         [Fact]
         public void CanFindMaxTest()
         {
-            FindMax tree = new FindMax();
+            FindMax<int> tree = new FindMax<int>();
             tree.Root = new Node(2);
             tree.Root.Left = new Node(7);
             tree.Root.Right = new Node(5);

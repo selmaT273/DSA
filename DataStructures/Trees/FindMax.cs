@@ -2,7 +2,7 @@
 
 namespace DataStructures.Trees
 {
-    public class FindMax : BinaryTree
+    public class FindMax<T> : BinaryTree<T>
     {
         public Node root;
 

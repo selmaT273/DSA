@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace DataStructures.Trees
 {
-    public class BinaryTree
+    public class BinaryTree<T>
     {
         public Node Root { get; set; }
         public Queue<int> PreOrder(Node node, Queue<int> queue)

@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DataStructures.Trees
 {
 
-    public class BinarySearchTree : BinaryTree
+    public class BinarySearchTree<T> : BinaryTree<T>
     {
         public void Add(int value)
         {
