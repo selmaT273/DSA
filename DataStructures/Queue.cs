@@ -3,8 +3,8 @@ namespace DataStructures.Queue
 {
     public class Queue<T>
     {
-        private Node front;
-        private Node rear;
+        Node front;
+        Node rear;
 
         public void Enqueue(T value)
         {

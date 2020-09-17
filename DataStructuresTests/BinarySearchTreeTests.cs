@@ -32,19 +32,19 @@ namespace DataStructuresTests
             binarySearchTree.Add(4);
             binarySearchTree.Add(2);
 
-            Assert.Equal("4, 2", binarySearchTree.ToString());
+            Assert.Equal(2, binarySearchTree.Root.Left.Value);
         }
 
-        [Fact]
-        public void ContainsValueTest()
-        {
-            BinarySearchTree<int> binarySearchTree = new BinarySearchTree<int>();
+        //[Fact]
+        //public void ContainsValueTest()
+        //{
+        //    BinarySearchTree<int> binarySearchTree = new BinarySearchTree<int>();
 
-            binarySearchTree.Add(4);
-            binarySearchTree.Add(2);
+        //    binarySearchTree.Add(4);
+        //    binarySearchTree.Add(2);
 
-            Assert.True(binarySearchTree.Contains(4));
-            Assert.False(binarySearchTree.Contains(5));
-        }
+        //    Assert.True(binarySearchTree.Contains(4));
+        //    Assert.False(binarySearchTree.Contains(5));
+        //}
     }
 }

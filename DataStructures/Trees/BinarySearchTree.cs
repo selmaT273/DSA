@@ -4,95 +4,64 @@ using System.Collections.Generic;
 namespace DataStructures.Trees
 {
 
-    public class BinarySearchTree<T> : BinaryTree<T>
+    public class BinarySearchTree<T> : BinaryTree<T> where T : IComparable<T>
     {
-        public void Add(int value)
+        public void Add(T value)
         {
+            Node node = new Node();
+            node.Value = value;
+
             if(Root == null)
             {
-                Root = new Node(value);
+                Root = node;
             }
             else
             {
-                Add(Root, value);
-            }
-        }
+                Node current = Root;
+                Node parentNode;
 
-        private void Add(Node node, int value)
-        { 
-            if (node == null)
-            {
-                node = new Node(value);
-            }
-            else
-            {
-                if(value < node.Value)
+                while(true)
                 {
-                    if (node.Left == null)
+                    parentNode = current;
+                    if(value.CompareTo(current.Value) < 0)
                     {
-                        node.Left = new Node(value);
+                        current = current.Left;
+                        if(current == null)
+                        {
+                            parentNode.Left = node;
+                            return; 
+                        } 
                     }
-                    else
+                    current = current.Right;
+                    if(current == null)
                     {
-                        Add(node.Left, value);
-                    }
-                }
-                else
-                {
-                    if(node.Right == null)
-                    {
-                        node.Right = new Node(value);
-                    }
-                    else
-                    {
-                        Add(node.Right, value);
+                        parentNode.Right = node;
+                        return; 
                     }
                 }
             }
-        }
+        } 
 
-        public bool Contains(int value)
+        public bool Contains(Node root, T value)
         {
-            if (Root == null)
+            while (root != null)
             {
-                return false;
-            }
-            else
-            {
-                return Contains(Root, value);
-            }
-        }
-
-        private bool Contains(Node node, int value)
-        {
-            if(node.Value == value)
-            {
-                return true;
-            }
-            else if (value < node.Value)
-            {
-                if(node.Left == null)
+                if (root.Value.Equals(value))
                 {
-                    return false;
+                    return true; 
+                }
+                else if (root.Value.CompareTo(value) > 0)
+                {
+                    return Contains(root.Left, value); 
                 }
                 else
                 {
-                    return Contains(node.Left, value);
-                    
+                    return Contains(root.Right, value); 
                 }
             }
-            else
-            {
-                if(node.Right == null)
-                {
-                    return false;
-                }
-                else
-                {
-                    return Contains(node.Right, value);
-                }
-            }
+            return false;
         }
+ 
 
         
     }

@@ -10,15 +10,15 @@ namespace DataStructuresTests
         [Fact]
         public void CanPreOrderTest()
         {
-            BinaryTree<int> tree = new BinaryTree<int>();
+            BinarySearchTree<int> tree = new BinarySearchTree<int>();
 
-            tree.Root = new Node(1);
-            tree.Root.Left = new Node(2);
-            tree.Root.Right = new Node(3);
-            tree.Root.Left.Left = new Node(4);
-            tree.Root.Left.Right = new Node(5);
+            tree.Add(1);
+            tree.Add(2);
+            tree.Add(3);
+            tree.Add(4);
+            tree.Add(5);
 
-            string preOrder = string.Join(", ", tree.PreOrder(tree.Root, new Queue<int>()));
+            string preOrder = string.Join(", ", tree.PreOrder(tree.Root));
 
             Assert.Equal("1, 2, 4, 5, 3", preOrder);
         }
@@ -26,15 +26,15 @@ namespace DataStructuresTests
         [Fact]
         public void CanInOrderTest()
         {
-            BinaryTree<int> tree = new BinaryTree<int>();
+            BinarySearchTree<int> tree = new BinarySearchTree<int>();
 
-            tree.Root = new Node(1);
-            tree.Root.Left = new Node(2);
-            tree.Root.Right = new Node(3);
-            tree.Root.Left.Left = new Node(4);
-            tree.Root.Left.Right = new Node(5);
+            tree.Add(1);
+            tree.Add(2);
+            tree.Add(3);
+            tree.Add(4);
+            tree.Add(5);
 
-            string inOrder = string.Join(", ", tree.InOrder(tree.Root, new Queue<int>()));
+            string inOrder = string.Join(", ", tree.InOrder(tree.Root));
 
             Assert.Equal("4, 2, 5, 1, 3", inOrder);
         }
@@ -42,15 +42,15 @@ namespace DataStructuresTests
         [Fact]
         public void CanPostOrderTest()
         {
-            BinaryTree<int> tree = new BinaryTree<int>();
+            BinarySearchTree<int> tree = new BinarySearchTree<int>();
 
-            tree.Root = new Node(1);
-            tree.Root.Left = new Node(2);
-            tree.Root.Right = new Node(3);
-            tree.Root.Left.Left = new Node(4);
-            tree.Root.Left.Right = new Node(5);
+            tree.Add(1);
+            tree.Add(2);
+            tree.Add(3);
+            tree.Add(4);
+            tree.Add(5);
 
-            string postOrder = string.Join(", ", tree.PostOrder(tree.Root, new Queue<int>()));
+            string postOrder = string.Join(", ", tree.PostOrder(tree.Root));
 
             Assert.Equal("4, 5, 2, 3, 1", postOrder);
         }
@@ -58,13 +58,13 @@ namespace DataStructuresTests
         [Fact]
         public void CanBreadthFirstTest()
         {
-            BinaryTree<int> tree = new BinaryTree<int>();
+            BinarySearchTree<int> tree = new BinarySearchTree<int>();
 
-            tree.Root = new Node(1);
-            tree.Root.Left = new Node(2);
-            tree.Root.Right = new Node(3);
-            tree.Root.Left.Left = new Node(4);
-            tree.Root.Left.Right = new Node(5);
+            tree.Add(1);
+            tree.Add(2);
+            tree.Add(3);
+            tree.Add(4);
+            tree.Add(5);
 
             string breadthFirst = string.Join(", ", tree.BreadthFirst());
 

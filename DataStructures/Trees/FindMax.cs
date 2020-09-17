@@ -1,32 +1,33 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DataStructures.Trees
 {
-    public class FindMax<T> : BinaryTree<T>
+    public class FindMax<T> : BinaryTree<T> where T : IComparable<T>
     {
         public Node root;
 
-        public int FindMaxValue(Node node)
+        public IEnumerable<T> FindMaxValue(Node node)
         {
             if (node == null)
             {
-                return 0;
+                throw new Exception("root is null");
             }
 
-            int tempMax = node.Value;
-            int leftMax = FindMaxValue(node.Left);
-            int rightMax = FindMaxValue(node.Right);
+            T tempMax = node.Value;
+            T leftMax = (T)FindMaxValue(node.Left);
+            T rightMax = (T)FindMaxValue(node.Right);
 
-            if(leftMax > tempMax)
+            if(leftMax.CompareTo(tempMax) > 0)
             {
                 tempMax = leftMax;
             }
-            if(rightMax > tempMax)
+            if(rightMax.CompareTo(tempMax) > 0)
             {
                 tempMax = rightMax;
             }
 
-            return tempMax;
+            yield return tempMax;
         }
     }
 }

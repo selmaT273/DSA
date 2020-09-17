@@ -1,108 +1,113 @@
 ﻿using System;
 using System.Collections.Generic;
+using DataStructures.Queue;
 using System.Linq;
 
 namespace DataStructures.Trees
 {
-    public class BinaryTree<T>
+    public class BinaryTree<T> where T : IComparable<T>
     {
         public Node Root { get; set; }
-        public Queue<int> PreOrder(Node node, Queue<int> queue)
+        public IEnumerable<T> PreOrder(Node Root)
         {
-            if (node == null)
+            if (Root is null)
             {
-                return queue;
-            }
-            else
-            {
-                queue.Enqueue(node.Value);
-                PreOrder(node.Left, queue);
-                PreOrder(node.Right, queue);
-
-                return queue;
+                yield break;
             }
             
-        }
-
-        public Queue<int> InOrder(Node node, Queue<int> queue)
-        {
-            if (node == null)
+            foreach(T thing in PreOrder(Root.Left))
             {
-                return queue;
+                yield return thing; 
             }
-            else
+            foreach(T thing in PreOrder(Root.Right))
             {
-                InOrder(node.Left, queue);
-                queue.Enqueue(node.Value);
-                InOrder(node.Right, queue);
-
-                return queue;
+                yield return thing; 
             }
         }
 
-        public Queue<int> PostOrder(Node node, Queue<int> queue)
+        public IEnumerable<T> InOrder(Node Root)
         {
-            if (node == null)
+            if (Root is null)
             {
-                return queue;
+                yield break;
             }
-            else
+            if (Root != null)
             {
-                PostOrder(node.Left, queue);
-                PostOrder(node.Right, queue);
-                queue.Enqueue(node.Value);
-
-                return queue;
-            }
-        }
-
-
-        public override string ToString()
-        {
-            return string.Join(", ", PreOrder(Root, new Queue<int>()));
-        }
-
-       public Queue<int> BreadthFirst()
-        {
-            Queue<int> result = new Queue<int>();
-            if(Root == null)
-            {
-                return result;
-            }
-
-            Queue<Node> nodes = new Queue<Node>();
-            nodes.Enqueue(Root);
-
-            while (nodes.Count != 0)
-            {
-                Node node = nodes.Dequeue();
-                result.Enqueue(node.Value);
-                if(node.Left != null)
+                foreach(T thing in InOrder(Root.Left))
                 {
-                    nodes.Enqueue(node.Left);
+                    yield return thing; 
                 }
-                if(node.Right != null)
+                yield return Root.Value;
+
+                foreach(T thing in InOrder(Root.Left))
                 {
-                    nodes.Enqueue(node.Right);
+                    yield return thing; 
                 }
             }
-            return result;
         }
 
-    }
-
-    public class Node
-    {
-        public int Value { get; set; }
-        public Node Left { get; set; }
-        public Node Right { get; set; }
-
-        public Node(int value)
+        public IEnumerable<T> PostOrder(Node Root)
         {
-            Value = value;
-            Left = null;
-            Right = null;
+            if (Root is null)
+            {
+                yield break;
+            }
+            if (Root != null)
+            {
+                foreach (T thing in PostOrder(Root.Left))
+                {
+                    yield return thing; 
+                } 
+                foreach (T thing in PostOrder(Root.Right))
+                {
+                    yield return thing; 
+                }
+                yield return Root.Value;
+            }
         }
 
+
+        //public override string ToString()
+        //{
+        //    return string.Join(", ", PreOrder(Root, new Queue<T>()));
+        //}
+
+       public IEnumerable<T> BreadthFirst()
+        {
+            if(Root is null)
+            {
+                yield break; 
+            }
+
+            DataStructures.Queue.Queue<Node> breadthFirstTraversal = new DataStructures.Queue.Queue<Node>();
+            breadthFirstTraversal.Enqueue(Root);
+
+            while(!breadthFirstTraversal.IsEmpty())
+            {
+                var front = breadthFirstTraversal.Dequeue();
+                yield return front.Value;
+
+                if(front.Left != null)
+                {
+                    breadthFirstTraversal.Enqueue(front.Left); 
+                }
+                else if(front.Right != null)
+                {
+                    breadthFirstTraversal.Enqueue(front.Right); 
+                }
+            }
+        }
+
+        public class Node
+        {
+            public T Value { get; set; }
+            public Node Left { get; set; }
+            public Node Right { get; set; }
+
+            public Node Root { get; set; }
+
+        }
     }
+
+  
 }
